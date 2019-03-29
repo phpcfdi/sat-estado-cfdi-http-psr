@@ -27,4 +27,3 @@ $client = new \Http\Adapter\Guzzle6\Client();
 $factory = new HttpConsumerFactory($client, $requestFactory, $streamFactory);
 $consumer = new HttpConsumerClient($factory);
 ```
-
