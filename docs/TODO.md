@@ -5,5 +5,5 @@
     - [ ] Laravel
     - [ ] Symfony
     - [ ] Yii
-    - [ ] Guzzle
+    - [X] Guzzle (gracias @blacktrue)
     - [ ] HTTPPlug

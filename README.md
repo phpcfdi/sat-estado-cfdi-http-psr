@@ -52,6 +52,7 @@ Usa [composer](https://getcomposer.org/)
 composer require phpcfdi/sat-estado-cfdi-http-psr
 ```
 
+
 ## Ejemplo básico de uso
 
 ```php
@@ -74,10 +75,15 @@ if ($response->cancellable()->isNotCancellable()) {
 }
 ```
 
-En el archivo de documentación [Integración](docs/Integracion.md) hay notas de cómo puedes inteagrar
-y usar esta librería en tu sistema usando la implementación de los PSR-17 y PSR-18 que decidas.
 
-En el archivo de documentación [Guzzle](docs/Guzzle.md) podrás ver un ejemplo de implementación con la libreria [guzzlehttp/guzzle](https://github.com/guzzle/guzzle).
+## Integraciones
+
+Puedes ver los siguientes recursos para integrar `phpcfdi/sat-estado-cfdi-http-psr` a tu proyecto.
+
+- [Integración Guzzle](docs/integracion-guzzle.md)
+  Implementación con [guzzlehttp/guzzle](https://github.com/guzzle/guzzle).
+- [Integración genérica](docs/integracion-generica.md)
+  Implementación de los PSR-17 y PSR-18 que decidas, ejemplo usando Sunrise.
 
 
 ## Compatilibilidad
