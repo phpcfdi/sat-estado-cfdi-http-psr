@@ -65,7 +65,7 @@ class HttpConsumerClient implements ConsumerClientInterface
         // parameters --convert--> request --httpCall--> response --convert--> ConsumerClientResponse
         $request = $this->createHttpRequest($uri, $expression);
         $response = $this->sendRequest($request);
-        return $this->createConsumerClientResponse($response->getBody()->getContents());
+        return $this->createConsumerClientResponse($response->getBody()->__toString());
     }
 
     /**
