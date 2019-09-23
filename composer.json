@@ -33,7 +33,7 @@
     "require-dev": {
         "ext-curl": "*",
         "phpcfdi/cfdi-expresiones": "^2.0",
-        "sunrise/http-client-curl": "^1.0.3",
+        "sunrise/http-client-curl": "^1.1.0",
         "sunrise/http-factory": "^1.0",
         "sunrise/http-message": "^1.0",
         "phpunit/phpunit": "^8.0",

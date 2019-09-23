@@ -23,7 +23,7 @@ class SunriseHttpConsumerFactory extends HttpConsumerFactory implements HttpCons
     ) {
         $streamFactoryInterface = $streamFactoryInterface ?? new SunriseStreamFactory();
         $requestFactoryInterface = $requestFactoryInterface ?? new SunriseRequestFactory();
-        $httpClient = $httpClient ?? new SunriseHttpClient(new SunriseResponseFactory(), $streamFactoryInterface);
+        $httpClient = $httpClient ?? new SunriseHttpClient(new SunriseResponseFactory());
         parent::__construct($httpClient, $requestFactoryInterface, $streamFactoryInterface);
     }
 }
