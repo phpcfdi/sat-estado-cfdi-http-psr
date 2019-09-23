@@ -7,8 +7,7 @@
     "authors": [
         {
             "name": "Carlos C Soto",
-            "email": "eclipxe13@gmail.com",
-            "homepage": "http://eclipxe.com.mx/"
+            "email": "eclipxe13@gmail.com"
         }
     ],
     "support": {
@@ -33,7 +32,7 @@
     "require-dev": {
         "ext-curl": "*",
         "phpcfdi/cfdi-expresiones": "^2.0",
-        "sunrise/http-client-curl": "^1.0.3",
+        "sunrise/http-client-curl": "^1.1.0",
         "sunrise/http-factory": "^1.0",
         "sunrise/http-message": "^1.0",
         "phpunit/phpunit": "^8.0",
@@ -67,6 +66,7 @@
         ],
         "dev:test": [
             "vendor/bin/phplint",
+            "@dev:check-style",
             "vendor/bin/phpunit --testdox --verbose --stop-on-failure",
             "find . -type f -name .phpunit.result.cache -delete",
             "vendor/bin/phpstan analyse --no-progress --verbose --level max src/ tests/"
@@ -79,7 +79,7 @@
         "dev:build": "DEV: run dev:fix-style dev:tests and dev:docs, run before pull request",
         "dev:check-style": "DEV: search for code style errors using php-cs-fixer and phpcs",
         "dev:fix-style": "DEV: fix code style errors using php-cs-fixer and phpcbf",
-        "dev:test": "DEV: run phplint, phpunit and phpstan",
+        "dev:test": "DEV: run phplint, @dev:check-style, phpunit and phpstan",
         "dev:coverage": "DEV: run phpunit with xdebug and storage coverage in build/coverage/html/"
     }
 }
