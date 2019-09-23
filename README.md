@@ -119,10 +119,10 @@ and licensed for use under the MIT License (MIT). Please see [LICENSE][] for mor
 [coverage]: https://scrutinizer-ci.com/g/phpcfdi/sat-estado-cfdi-http-psr/code-structure/master/code-coverage
 [downloads]: https://packagist.org/packages/phpcfdi/sat-estado-cfdi-http-psr
 
-[badge-source]: http://img.shields.io/badge/source-phpcfdi/sat--estado--cfdi--http--psr-blue.svg?style=flat-square
-[badge-release]: https://img.shields.io/github/release/phpcfdi/sat-estado-cfdi-http-psr.svg?style=flat-square
-[badge-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[badge-build]: https://img.shields.io/travis/phpcfdi/sat-estado-cfdi-http-psr/master.svg?style=flat-square
-[badge-quality]: https://img.shields.io/scrutinizer/g/phpcfdi/sat-estado-cfdi-http-psr/master.svg?style=flat-square
-[badge-coverage]: https://img.shields.io/scrutinizer/coverage/g/phpcfdi/sat-estado-cfdi-http-psr/master.svg?style=flat-square
-[badge-downloads]: https://img.shields.io/packagist/dt/phpcfdi/sat-estado-cfdi-http-psr.svg?style=flat-square
+[badge-source]: http://img.shields.io/badge/source-phpcfdi/sat--estado--cfdi--http--psr-blue?style=flat-square
+[badge-release]: https://img.shields.io/github/release/phpcfdi/sat-estado-cfdi-http-psr?style=flat-square
+[badge-license]: https://img.shields.io/github/license/phpcfdi/sat-estado-cfdi-http-psr?style=flat-square
+[badge-build]: https://img.shields.io/travis/phpcfdi/sat-estado-cfdi-http-psr/master?style=flat-square
+[badge-quality]: https://img.shields.io/scrutinizer/g/phpcfdi/sat-estado-cfdi-http-psr/master?style=flat-square
+[badge-coverage]: https://img.shields.io/scrutinizer/coverage/g/phpcfdi/sat-estado-cfdi-http-psr/master?style=flat-square
+[badge-downloads]: https://img.shields.io/packagist/dt/phpcfdi/sat-estado-cfdi-http-psr?style=flat-square
