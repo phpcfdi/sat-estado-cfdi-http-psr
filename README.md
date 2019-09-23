@@ -103,7 +103,7 @@ y recuerda revisar el archivo de tareas pendientes [TODO][] y el [CHANGELOG][].
 
 ## Copyright and License
 
-The phpcfdi/sat-estado-cfdi library is copyright © [Carlos C Soto](http://eclipxe.com.mx/)
+The `phpcfdi/sat-estado-cfdi-http-psr` library is copyright © [Carlos C Soto](http://eclipxe.com.mx/)
 and licensed for use under the MIT License (MIT). Please see [LICENSE][] for more information.
 
 
