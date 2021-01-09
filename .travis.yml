@@ -1,18 +1,19 @@
 language: php
 
 # php compatibility
-php:
-  - "7.2"
-  - "7.3"
-  - "7.4snapshot"
+php: ["7.2", "7.3", "7.4", "8.0"]
 
 matrix:
   allow_failures:
-    - php: "7.4snapshot"
+    - php: 8.0
 
 cache:
   - directories:
     - $HOME/.composer
+
+env:
+  global:
+    - PHP_CS_FIXER_IGNORE_ENV=yes
 
 before_script:
   - phpenv config-rm xdebug.ini || true
