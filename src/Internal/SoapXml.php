@@ -58,7 +58,6 @@ class SoapXml
             ->appendChild($document->createElementNS($this->uri(), 'c:Consulta'))
             ->appendChild($document->createElementNS($this->uri(), 'c:expresionImpresa'))
             ->appendChild($document->createTextNode($expression));
-        $xml = $document->saveXML() ?: '';
-        return $xml;
+        return $document->saveXML() ?: '';
     }
 }

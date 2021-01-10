@@ -7,6 +7,7 @@ namespace PhpCfdi\SatEstadoCfdi\Tests\HttpPsr\Unit;
 use PhpCfdi\SatEstadoCfdi\Contracts\ConsumerClientInterface;
 use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerClient;
 use PhpCfdi\SatEstadoCfdi\Tests\HttpPsr\TestCase;
+use PHPUnit\Framework\MockObject\MockObject;
 use Sunrise\Http\Factory\ResponseFactory;
 
 class HttpConsumerClientTest extends TestCase
@@ -61,7 +62,7 @@ class HttpConsumerClientTest extends TestCase
 
         // create a class that intercept sendRequest and return a prepared Response object
         /**
-         * @var HttpConsumerClient&\PHPUnit\Framework\MockObject\MockObject $client
+         * @var HttpConsumerClient&MockObject $client
          * @noinspection PhpDeprecationInspection
          */
         $client = $this->getMockBuilder(HttpConsumerClient::class)
