@@ -7,6 +7,7 @@ namespace PhpCfdi\SatEstadoCfdi\Tests\HttpPsr\Unit;
 use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerFactory;
 use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerFactoryInterface;
 use PhpCfdi\SatEstadoCfdi\Tests\HttpPsr\TestCase;
+use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
@@ -15,11 +16,11 @@ class HttpConsumerFactoryTest extends TestCase
 {
     private function createFactoryWithMockObjects(): HttpConsumerFactoryInterface
     {
-        /** @var ClientInterface&\PHPUnit\Framework\MockObject\MockObject $client */
+        /** @var ClientInterface&MockObject $client */
         $client = $this->createMock(ClientInterface::class);
-        /** @var RequestFactoryInterface&\PHPUnit\Framework\MockObject\MockObject $requestFactory */
+        /** @var RequestFactoryInterface&MockObject $requestFactory */
         $requestFactory = $this->createMock(RequestFactoryInterface::class);
-        /** @var StreamFactoryInterface&\PHPUnit\Framework\MockObject\MockObject $streamFactory */
+        /** @var StreamFactoryInterface&MockObject $streamFactory */
         $streamFactory = $this->createMock(StreamFactoryInterface::class);
 
         return new HttpConsumerFactory($client, $requestFactory, $streamFactory);
