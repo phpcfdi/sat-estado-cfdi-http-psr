@@ -8,7 +8,7 @@ use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerFactoryInterface;
 
 class TestCase extends \PHPUnit\Framework\TestCase
 {
-    public function createSunriseFactory(): HttpConsumerFactoryInterface
+    public function createHttpConsumerFactory(): HttpConsumerFactoryInterface
     {
         return new SunriseHttpConsumerFactory();
     }

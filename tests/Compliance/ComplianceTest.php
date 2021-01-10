@@ -12,7 +12,7 @@ class ComplianceTest extends TestCase
 {
     public function testCompliance(): void
     {
-        $sunriseFactory = $this->createSunriseFactory();
+        $sunriseFactory = $this->createHttpConsumerFactory();
 
         $client = new HttpConsumerClient($sunriseFactory);
         $tester = new ComplianceTester($client);
