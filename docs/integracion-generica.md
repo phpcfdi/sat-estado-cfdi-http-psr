@@ -8,6 +8,7 @@ Suponiendo que estás usando los paquetes de Sunrise
 
 ```php
 <?php
+declare(strict_types=1);
 
 use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerClient;
 use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerFactory;

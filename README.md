@@ -55,14 +55,20 @@ composer require phpcfdi/sat-estado-cfdi-http-psr
 
 ```php
 <?php
+declare(strict_types=1);
+
+use PhpCfdi\SatEstadoCfdi\Consumer;
+use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerClient;
+use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerFactoryInterface;
+
 // suponiendo que tienes un objeto factory que tu formaste
-/** @var \PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerFactoryInterface $factory */
+/** @var HttpConsumerFactoryInterface $factory */
 
 // construimos el cliente
-$client = new \PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerClient($factory);
+$client = new HttpConsumerClient($factory);
 
 // creamos el consumidor con nuestro cliente
-$consumer = new \PhpCfdi\SatEstadoCfdi\Consumer($client);
+$consumer = new Consumer($client);
 
 // consumimos el webservice!
 $response = $consumer->execute('...expression');
@@ -87,7 +93,7 @@ Puedes ver los siguientes recursos para integrar `phpcfdi/sat-estado-cfdi-http-p
 Esta librería se mantendrá compatible con al menos la versión con
 [soporte activo de PHP](https://www.php.net/supported-versions.php) más reciente.
 
-También utilizamos [Versionado Semántico 2.0.0](https://semver.org/lang/es/) por lo que puedes usar esta librería
+También utilizamos [Versionado Semántico 2.0.0](docs/SEMVER.md) por lo que puedes usar esta librería
 sin temor a romper tu aplicación.
 
 ## Contribuciones
