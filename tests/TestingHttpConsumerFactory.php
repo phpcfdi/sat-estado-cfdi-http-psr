@@ -9,12 +9,12 @@ use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerFactoryInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
-use Sunrise\Http\Client\Curl\Client as SunriseHttpClient;
 use Sunrise\Http\Factory\RequestFactory as SunriseRequestFactory;
 use Sunrise\Http\Factory\ResponseFactory as SunriseResponseFactory;
 use Sunrise\Http\Factory\StreamFactory as SunriseStreamFactory;
+use Symfony\Component\HttpClient\Psr18Client as SymfonyHttpClient;
 
-class SunriseHttpConsumerFactory extends HttpConsumerFactory implements HttpConsumerFactoryInterface
+class TestingHttpConsumerFactory extends HttpConsumerFactory implements HttpConsumerFactoryInterface
 {
     public function __construct(
         ClientInterface $httpClient = null,
@@ -23,7 +23,7 @@ class SunriseHttpConsumerFactory extends HttpConsumerFactory implements HttpCons
     ) {
         $streamFactoryInterface = $streamFactoryInterface ?? new SunriseStreamFactory();
         $requestFactoryInterface = $requestFactoryInterface ?? new SunriseRequestFactory();
-        $httpClient = $httpClient ?? new SunriseHttpClient(new SunriseResponseFactory());
+        $httpClient = $httpClient ?? new SymfonyHttpClient(null, new SunriseResponseFactory(), $streamFactoryInterface);
         parent::__construct($httpClient, $requestFactoryInterface, $streamFactoryInterface);
     }
 }

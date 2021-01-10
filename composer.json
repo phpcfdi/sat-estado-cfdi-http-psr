@@ -24,7 +24,7 @@
     "require": {
         "php": ">=7.2",
         "ext-dom": "*",
-        "phpcfdi/sat-estado-cfdi": "^0.6.1|^0.7.0",
+        "phpcfdi/sat-estado-cfdi": "^0.7.0",
         "psr/http-client": "^1.0",
         "psr/http-factory": "^1.0",
         "psr/http-message": "^1.0"
@@ -32,14 +32,13 @@
     "require-dev": {
         "ext-curl": "*",
         "phpcfdi/cfdi-expresiones": "^2.0",
-        "sunrise/http-client-curl": "^1.1.0",
+        "symfony/http-client": "^5.2",
         "sunrise/http-factory": "^1.0",
         "sunrise/http-message": "^1.0",
         "phpunit/phpunit": "^8.0",
-        "overtrue/phplint": "^1.0",
         "squizlabs/php_codesniffer": "^3.0",
         "friendsofphp/php-cs-fixer": "^2.4",
-        "phpstan/phpstan-shim": "^0.11"
+        "phpstan/phpstan": "^0.12"
     },
     "suggest": {
         "phpcfdi/cfdi-expresiones": "Genera expresiones de CFDI 3.3, CFDI 3.2 y RET 1.0"
@@ -57,29 +56,27 @@
     "scripts": {
         "dev:build": ["@dev:fix-style", "@dev:test"],
         "dev:check-style": [
-            "vendor/bin/php-cs-fixer fix --dry-run --verbose",
-            "vendor/bin/phpcs --colors -sp src/ tests/"
+            "@php vendor/bin/php-cs-fixer fix --dry-run --verbose",
+            "@php vendor/bin/phpcs --colors -sp src/ tests/"
         ],
         "dev:fix-style": [
-            "vendor/bin/php-cs-fixer fix --verbose",
-            "vendor/bin/phpcbf --colors -sp src/ tests/"
+            "@php vendor/bin/php-cs-fixer fix --verbose",
+            "@php vendor/bin/phpcbf --colors -sp src/ tests/"
         ],
         "dev:test": [
-            "vendor/bin/phplint",
             "@dev:check-style",
-            "vendor/bin/phpunit --testdox --verbose --stop-on-failure",
-            "find . -type f -name .phpunit.result.cache -delete",
-            "vendor/bin/phpstan analyse --no-progress --verbose --level max src/ tests/"
+            "@php vendor/bin/phpunit --testdox --verbose --stop-on-failure",
+            "@php vendor/bin/phpstan analyse --no-progress --verbose --level max src/ tests/"
         ],
         "dev:coverage": [
-            "@php -dzend_extension=xdebug.so vendor/bin/phpunit --coverage-text --coverage-html build/coverage/html/"
+            "@php -dzend_extension=xdebug.so vendor/bin/phpunit --testdox --coverage-html build/coverage/html/"
         ]
     },
     "scripts-descriptions": {
         "dev:build": "DEV: run dev:fix-style dev:tests and dev:docs, run before pull request",
         "dev:check-style": "DEV: search for code style errors using php-cs-fixer and phpcs",
         "dev:fix-style": "DEV: fix code style errors using php-cs-fixer and phpcbf",
-        "dev:test": "DEV: run phplint, @dev:check-style, phpunit and phpstan",
+        "dev:test": "DEV: run dev:check-style, phpunit and phpstan",
         "dev:coverage": "DEV: run phpunit with xdebug and storage coverage in build/coverage/html/"
     }
 }

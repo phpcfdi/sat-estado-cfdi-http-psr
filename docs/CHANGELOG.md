@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## Version 0.2.3 2021-01-09
+
+- Update license year, HNY from PhpCfdi!
+- Ensure compatibility to PHP 8.0.
+- Upgrade to PHPStan 0.12.
+- Remove PHPLint.
+- Travis-CI: Update config, compatiblity matrix and build pipeline.
+- Scrutinizer: Update build pipeline.
+- Change dependency to `phpcfdi/sat-estado-cfdi: ^^0.7.0`.
+
 ## Version 0.2.2 2019-09-23
 
 - Fix usage of `RequestInterface`, to retrieve full body is recommended to use `StreamInterface::__toString()`.
@@ -12,20 +22,17 @@
     - Write `.phpunit.result.cache` on `build/`.
     - On Travis CI add PHP version `7.4snapshot` with allow failure
     - Let Scrutinizer CI decide which PHP version to use
-
-
+  
 ## Version 0.2.1 2019-05-16
 
 - Change dependence versions `phpcfdi/sat-estado-cfdi: ^0.6.1|^0.7.0`.
   See <https://github.com/phpcfdi/sat-estado-cfdi/issues/7>
-
-
+  
 ## Version 0.2.0 2019-03-29
 
 - Implemented `phpcfdi/sat-estado-cfdi:^0.6.0`
 - Improve documentation and integrations
 - Fix CONTRIBUTING project
-
 
 ## Version 0.1.0 2019-03-28
 

@@ -13,7 +13,7 @@ class HttpConsumerClientTest extends TestCase
 {
     public function testConstructor(): void
     {
-        $factory = $this->createSunriseFactory();
+        $factory = $this->createHttpConsumerFactory();
         $client = new HttpConsumerClient($factory);
         $this->assertInstanceOf(ConsumerClientInterface::class, $client);
         $this->assertSame($factory, $client->getFactory());
@@ -26,7 +26,7 @@ class HttpConsumerClientTest extends TestCase
         $expectedContentType = 'text/xml; charset=utf-8';
         $expectedSoapAction = 'http://tempuri.org/IConsultaCFDIService/Consulta';
 
-        $factory = $this->createSunriseFactory();
+        $factory = $this->createHttpConsumerFactory();
         $client = new HttpConsumerClient($factory);
 
         $request = $client->createHttpRequest($expectedUri, '?a=foo&b=bar');
@@ -41,7 +41,7 @@ class HttpConsumerClientTest extends TestCase
     {
         $sourceFile = $this->fileContentPath('soap-response.xml');
 
-        $factory = $this->createSunriseFactory();
+        $factory = $this->createHttpConsumerFactory();
         $client = new HttpConsumerClient($factory);
 
         $container = $client->createConsumerClientResponse($sourceFile);
@@ -55,12 +55,15 @@ class HttpConsumerClientTest extends TestCase
     public function testConsume(): void
     {
         $xmlContent = $this->fileContentPath('soap-response.xml');
-        $factory = $this->createSunriseFactory();
+        $factory = $this->createHttpConsumerFactory();
         $preparedResponse = (new ResponseFactory())->createResponse(200)
             ->withBody($factory->streamFactory()->createStream($xmlContent));
 
         // create a class that intercept sendRequest and return a prepared Response object
-        /** @var HttpConsumerClient&\PHPUnit\Framework\MockObject\MockObject $client */
+        /**
+         * @var HttpConsumerClient&\PHPUnit\Framework\MockObject\MockObject $client
+         * @noinspection PhpDeprecationInspection
+         */
         $client = $this->getMockBuilder(HttpConsumerClient::class)
             ->enableOriginalConstructor()
             ->setConstructorArgs([$factory])
