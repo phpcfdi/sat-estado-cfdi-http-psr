@@ -10,7 +10,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
 {
     public function createHttpConsumerFactory(): HttpConsumerFactoryInterface
     {
-        return new SunriseHttpConsumerFactory();
+        return new TestingHttpConsumerFactory();
     }
 
     public static function filePath(string $append = ''): string
