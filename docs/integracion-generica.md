@@ -34,7 +34,7 @@ $consumer = new HttpConsumerClient($factory);
 ## Extendiendo HttpConsumerFactory
 
 Otra forma de hacerlo es extendiendo la clase `HttpConsumerFactory`, un ejemplo de esto se puede ver
-en <https://github.com/phpcfdi/sat-estado-cfdi-http-psr/blob/master/tests/TestingHttpConsumerFactory.php>
+en <https://github.com/phpcfdi/sat-estado-cfdi-http-psr/blob/main/tests/TestingHttpConsumerFactory.php>
 
 
 ## Implementando HttpConsumerFactoryInterface

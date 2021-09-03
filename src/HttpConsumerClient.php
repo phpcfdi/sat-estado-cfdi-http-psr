@@ -7,6 +7,7 @@ namespace PhpCfdi\SatEstadoCfdi\HttpPsr;
 use PhpCfdi\SatEstadoCfdi\Contracts\ConsumerClientInterface;
 use PhpCfdi\SatEstadoCfdi\Contracts\ConsumerClientResponseInterface;
 use PhpCfdi\SatEstadoCfdi\HttpPsr\Internal\SoapXml;
+use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -41,9 +42,8 @@ class HttpConsumerClient implements ConsumerClientInterface
         // body
         $xml = $this->soapXml->createXmlRequest($expression);
         $body = $this->factory->streamFactory()->createStream($xml);
-        $request = $request->withBody($body);
 
-        return $request;
+        return $request->withBody($body);
     }
 
     public function createConsumerClientResponse(string $xmlResponse): ConsumerClientResponseInterface
@@ -60,6 +60,9 @@ class HttpConsumerClient implements ConsumerClientInterface
         return $container;
     }
 
+    /**
+     * @throws ClientExceptionInterface
+     */
     public function consume(string $uri, string $expression): ConsumerClientResponseInterface
     {
         // parameters --convert--> request --httpCall--> response --convert--> ConsumerClientResponse
@@ -73,6 +76,7 @@ class HttpConsumerClient implements ConsumerClientInterface
      *
      * @param RequestInterface $request
      * @return ResponseInterface
+     * @throws ClientExceptionInterface
      */
     protected function sendRequest(RequestInterface $request): ResponseInterface
     {
