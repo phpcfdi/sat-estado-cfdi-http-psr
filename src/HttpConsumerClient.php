@@ -49,7 +49,7 @@ class HttpConsumerClient implements ConsumerClientInterface
     public function createConsumerClientResponse(string $xmlResponse): ConsumerClientResponseInterface
     {
         // parse body
-        $dataExtracted = $this->soapXml->extractDataFromXmlResponse($xmlResponse);
+        $dataExtracted = $this->soapXml->extractDataFromXmlResponse($xmlResponse, 'ConsultaResult');
 
         // create & populate container
         $container = $this->factory->newConsumerClientResponse();

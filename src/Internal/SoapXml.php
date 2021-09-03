@@ -20,33 +20,40 @@ class SoapXml
         $this->uri = $uri;
     }
 
-    public function uri(): string
-    {
-        return $this->uri;
-    }
-
     /**
      * Extract the information from expected soap response
      *
      * @param string $xmlResponse
+     * @param string $elementName
      * @return array<string, string>
      */
-    public function extractDataFromXmlResponse(string $xmlResponse): array
+    public function extractDataFromXmlResponse(string $xmlResponse, string $elementName): array
     {
-        $extracted = [];
         $document = new DOMDocument();
         $document->loadXML($xmlResponse);
-        /** @var DOMElement $consultaResult */
-        foreach ($document->getElementsByTagNameNS($this->uri(), 'ConsultaResult') as $consultaResult) {
-            foreach ($consultaResult->childNodes as $children) {
-                if (! $children instanceof DOMElement) {
-                    continue;
-                }
-                $extracted[$children->localName] = $children->textContent;
-            }
-            break; // exit loop if for any reason got more than 1 element ConsultaResult
+
+        $consultaResult = $this->obtainFirstElement($document, $elementName);
+        if (null === $consultaResult) {
+            return [];
         }
+
+        $extracted = [];
+        foreach ($consultaResult->childNodes as $children) {
+            if (! $children instanceof DOMElement) {
+                continue;
+            }
+            $extracted[$children->localName] = $children->textContent;
+        }
+
         return $extracted;
+    }
+
+    private function obtainFirstElement(DOMDocument $document, string $elementName): ?DOMElement
+    {
+        foreach ($document->getElementsByTagNameNS($this->uri, $elementName) as $consultaResult) {
+            return $consultaResult;
+        }
+        return null;
     }
 
     public function createXmlRequest(string $expression): string
@@ -55,8 +62,8 @@ class SoapXml
         $document = new DOMDocument('1.0', 'UTF-8');
         $document->appendChild($document->createElementNS($soap, 's:Envelope'))
             ->appendChild($document->createElementNS($soap, 's:Body'))
-            ->appendChild($document->createElementNS($this->uri(), 'c:Consulta'))
-            ->appendChild($document->createElementNS($this->uri(), 'c:expresionImpresa'))
+            ->appendChild($document->createElementNS($this->uri, 'c:Consulta'))
+            ->appendChild($document->createElementNS($this->uri, 'c:expresionImpresa'))
             ->appendChild($document->createTextNode($expression));
         return $document->saveXML() ?: '';
     }
