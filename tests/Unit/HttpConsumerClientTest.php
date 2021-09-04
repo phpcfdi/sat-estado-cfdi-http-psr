@@ -6,8 +6,12 @@ namespace PhpCfdi\SatEstadoCfdi\Tests\HttpPsr\Unit;
 
 use PhpCfdi\SatEstadoCfdi\Contracts\ConsumerClientInterface;
 use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerClient;
+use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerFactoryInterface;
 use PhpCfdi\SatEstadoCfdi\Tests\HttpPsr\TestCase;
 use PHPUnit\Framework\MockObject\MockObject;
+use Psr\Http\Client\ClientInterface as HttpClientInterface;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 use Sunrise\Http\Factory\ResponseFactory;
 
 class HttpConsumerClientTest extends TestCase
@@ -74,5 +78,34 @@ class HttpConsumerClientTest extends TestCase
 
         $container = $client->consume('http://example.com/', '');
         $this->assertSame('S - Comprobante obtenido satisfactoriamente.', $container->get('CodigoEstatus'));
+    }
+
+    public function testMethodSendRequest(): void
+    {
+        $request = $this->createMock(RequestInterface::class);
+        $response = $this->createMock(ResponseInterface::class);
+
+        /** @var HttpClientInterface&MockObject $httpClient */
+        $httpClient = $this->createMock(HttpClientInterface::class);
+        $httpClient->expects($this->once())
+            ->method('sendRequest')
+            ->with($request)
+            ->willReturn($response);
+
+        /** @var HttpConsumerFactoryInterface&MockObject $factory */
+        $factory = $this->createMock(HttpConsumerFactoryInterface::class);
+        $factory->expects($this->once())
+            ->method('httpClient')
+            ->willReturn($httpClient);
+
+        $httpConsumetClient = new class ($factory) extends HttpConsumerClient {
+            /** @noinspection PhpOverridingMethodVisibilityInspection */
+            public function sendRequest(RequestInterface $request): ResponseInterface // phpcs:ignore
+            {
+                return parent::sendRequest($request);
+            }
+        };
+
+        $this->assertSame($response, $httpConsumetClient->sendRequest($request));
     }
 }
