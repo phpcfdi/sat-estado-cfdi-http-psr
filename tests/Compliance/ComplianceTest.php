@@ -8,7 +8,7 @@ use PhpCfdi\SatEstadoCfdi\ComplianceTester\ComplianceTester;
 use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerClient;
 use PhpCfdi\SatEstadoCfdi\Tests\HttpPsr\TestCase;
 
-class ComplianceTest extends TestCase
+final class ComplianceTest extends TestCase
 {
     public function testCompliance(): void
     {

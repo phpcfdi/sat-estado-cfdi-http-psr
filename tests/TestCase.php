@@ -6,7 +6,7 @@ namespace PhpCfdi\SatEstadoCfdi\Tests\HttpPsr;
 
 use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerFactoryInterface;
 
-class TestCase extends \PHPUnit\Framework\TestCase
+abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     public function createHttpConsumerFactory(): HttpConsumerFactoryInterface
     {

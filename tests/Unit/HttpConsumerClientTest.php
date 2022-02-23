@@ -14,7 +14,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Sunrise\Http\Factory\ResponseFactory;
 
-class HttpConsumerClientTest extends TestCase
+final class HttpConsumerClientTest extends TestCase
 {
     public function testConstructor(): void
     {

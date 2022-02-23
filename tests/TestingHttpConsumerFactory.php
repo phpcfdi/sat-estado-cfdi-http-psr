@@ -14,7 +14,7 @@ use Sunrise\Http\Factory\ResponseFactory as SunriseResponseFactory;
 use Sunrise\Http\Factory\StreamFactory as SunriseStreamFactory;
 use Symfony\Component\HttpClient\Psr18Client as SymfonyHttpClient;
 
-class TestingHttpConsumerFactory extends HttpConsumerFactory implements HttpConsumerFactoryInterface
+final class TestingHttpConsumerFactory extends HttpConsumerFactory implements HttpConsumerFactoryInterface
 {
     public function __construct(
         ClientInterface $httpClient = null,

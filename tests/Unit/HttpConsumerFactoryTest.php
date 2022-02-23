@@ -12,7 +12,7 @@ use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
-class HttpConsumerFactoryTest extends TestCase
+final class HttpConsumerFactoryTest extends TestCase
 {
     private function createFactoryWithMockObjects(): HttpConsumerFactoryInterface
     {
