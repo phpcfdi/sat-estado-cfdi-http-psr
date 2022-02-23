@@ -60,4 +60,12 @@ final class SoapXmlTest extends TestCase
 
         $this->assertXmlStringEqualsXmlString($expected, $createdXml);
     }
+
+    public function testExtractDataFromXmlResponseWhenIsEmpty(): void
+    {
+        $xmlns = 'http://tempuri.org/';
+        $soapXml = new SoapXml($xmlns);
+        $extracted = $soapXml->extractDataFromXmlResponse('', 'root');
+        $this->assertSame([], $extracted);
+    }
 }
