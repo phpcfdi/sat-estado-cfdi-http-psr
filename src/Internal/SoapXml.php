@@ -29,6 +29,10 @@ class SoapXml
      */
     public function extractDataFromXmlResponse(string $xmlResponse, string $elementName): array
     {
+        if ('' === $xmlResponse) {
+            return [];
+        }
+
         $document = new DOMDocument();
         $document->loadXML($xmlResponse);
 
