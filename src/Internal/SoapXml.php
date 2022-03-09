@@ -54,7 +54,9 @@ class SoapXml
 
     private function obtainFirstElement(DOMDocument $document, string $elementName): ?DOMElement
     {
-        foreach ($document->getElementsByTagNameNS($this->uri, $elementName) as $consultaResult) {
+        /** @var iterable<DOMElement> $elements */
+        $elements = $document->getElementsByTagNameNS($this->uri, $elementName);
+        foreach ($elements as $consultaResult) {
             return $consultaResult;
         }
         return null;
