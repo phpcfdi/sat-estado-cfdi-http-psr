@@ -9,6 +9,14 @@ Usamos [Versionado Semántico 2.0.0](SEMVER.md) por lo que puedes usar esta libr
 Pueden aparecer cambios no liberados que se integran a la rama principal, pero no ameritan una nueva liberación de
 versión, aunque sí su incorporación en la rama principal de trabajo. Generalmente se tratan de cambios en el desarrollo.
 
+### Fix build 2022-03-08
+
+Se corrige la integración continua porque PHPStan 1.4.8 no reconoce el tipo de elementos contenidos
+en un objeto de tipo `DOMNodeList`.
+
+En la integración continua la herramienta `phpcs` tenía fijos los directorios a escanear, ahora usa
+los directorios establecidos en el archivo de configuración.
+
 ## Listado de cambios
 
 ### Version 1.0.3 2022-02-22
