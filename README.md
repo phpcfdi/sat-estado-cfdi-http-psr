@@ -37,8 +37,7 @@ Los estándares de los que depende son:
 Esta librería no contiene las implementaciones de los estándares, pero ya existen fuera del ámbito de la aplicación.
 
 Te recomiendo probar las librerías de Sunrise
-[`sunrise/http-client-curl`](https://github.com/sunrise-php/http-client-curl),
-[`sunrise/http-factory`](https://github.com/sunrise-php/http-factory) y
+[`sunrise/http-client-curl`](https://github.com/sunrise-php/http-client-curl), y
 [`sunrise/http-message`](https://github.com/sunrise-php/http-message).
 
 O puedes ver en [Packagist](https://packagist.org/) los que te agraden:

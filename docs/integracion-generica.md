@@ -12,9 +12,9 @@ declare(strict_types=1);
 
 use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerClient;
 use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerFactory;
-use Sunrise\Http\Factory\RequestFactory;
-use Sunrise\Http\Factory\ResponseFactory;
-use Sunrise\Http\Factory\StreamFactory;
+use Sunrise\Http\Message\RequestFactory;
+use Sunrise\Http\Message\ResponseFactory;
+use Sunrise\Http\Message\StreamFactory;
 use Sunrise\Http\Client\Curl\Client;
 
 $streamFactory = new StreamFactory();
@@ -40,4 +40,4 @@ en <https://github.com/phpcfdi/sat-estado-cfdi-http-psr/blob/main/tests/TestingH
 ## Implementando HttpConsumerFactoryInterface
 
 Otra forma de hacerlo sería creando una clase que solamente extendiera `HttpConsumerFactoryInterface`.
-Pues el objeto `HttpConsumerClient` requiere en su contructor de un objeto que cumpla con dicha interface.
+Pues el objeto `HttpConsumerClient` requiere en su contructor de un objeto que cumpla con dicha interfaz.
