@@ -16,13 +16,14 @@ Esta es una actualización de mantenimiento que no genera una nueva liberación 
 - Se corrige la integración continua porque la librería `sunrise/http-factory` fue deprecada.
 - Se actuailza a `sunrise/http-message:^3.0`.
 - Se actualiza la documentación que hacía referencia a `sunrise/http-factory`.
-- Se sustituye `symfony/http-client` por `sunrise/http-client-curl`.
+- Se sustituye `symfony/http-client` por `sunrise/http-client-curl`. 
 - Se actualiza el año en la licencia. ¡Feliz 2023!
 - Se actualiza la configuración de estilo de código a la utilizada por otros proyectos de phpCfdi.
 - Se corrige la insignia `badge-build`.
 - Se corrige la liga al proyecto en la guía de contribución.
 - En los flujos de trabajo de integración continua:
   - Se agrega PHP 8.2 a la matriz de pruebas
+  - Se quitaPHP 7.3 de la matriz de pruebas porque no hay soporte para *Sunrise PHP*.
   - Los trabajos se ejecutan en PHP 8.2
   - Se actualizan las acciones de GitHub a la versión 3.
   - Se sustituye la directiva `::set-output` por `$GITHUB_OUTPUT`.
