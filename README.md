@@ -131,7 +131,7 @@ and licensed for use under the MIT License (MIT). Please see [LICENSE][] for mor
 [badge-php-version]: https://img.shields.io/packagist/php-v/phpcfdi/sat-estado-cfdi-http-psr?logo=php
 [badge-release]: https://img.shields.io/github/release/phpcfdi/sat-estado-cfdi-http-psr?logo=git
 [badge-license]: https://img.shields.io/github/license/phpcfdi/sat-estado-cfdi-http-psr?logo=open-source-initiative
-[badge-build]: https://img.shields.io/github/workflow/status/phpcfdi/sat-estado-cfdi-http-psr/build/main?logo=github-actions
+[badge-build]: https://img.shields.io/github/actions/workflow/status/phpcfdi/sat-estado-cfdi-http-psr/build.yml?branch=main&logo=github-actions
 [badge-reliability]: https://sonarcloud.io/api/project_badges/measure?project=phpcfdi_sat-estado-cfdi-http-psr&metric=reliability_rating
 [badge-maintainability]: https://sonarcloud.io/api/project_badges/measure?project=phpcfdi_sat-estado-cfdi-http-psr&metric=sqale_rating
 [badge-coverage]: https://img.shields.io/sonar/coverage/phpcfdi_sat-estado-cfdi-http-psr/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io
