@@ -37,8 +37,7 @@ Los estándares de los que depende son:
 Esta librería no contiene las implementaciones de los estándares, pero ya existen fuera del ámbito de la aplicación.
 
 Te recomiendo probar las librerías de Sunrise
-[`sunrise/http-client-curl`](https://github.com/sunrise-php/http-client-curl),
-[`sunrise/http-factory`](https://github.com/sunrise-php/http-factory) y
+[`sunrise/http-client-curl`](https://github.com/sunrise-php/http-client-curl), y
 [`sunrise/http-message`](https://github.com/sunrise-php/http-message).
 
 O puedes ver en [Packagist](https://packagist.org/) los que te agraden:
@@ -131,7 +130,7 @@ and licensed for use under the MIT License (MIT). Please see [LICENSE][] for mor
 [badge-php-version]: https://img.shields.io/packagist/php-v/phpcfdi/sat-estado-cfdi-http-psr?logo=php
 [badge-release]: https://img.shields.io/github/release/phpcfdi/sat-estado-cfdi-http-psr?logo=git
 [badge-license]: https://img.shields.io/github/license/phpcfdi/sat-estado-cfdi-http-psr?logo=open-source-initiative
-[badge-build]: https://img.shields.io/github/workflow/status/phpcfdi/sat-estado-cfdi-http-psr/build/main?logo=github-actions
+[badge-build]: https://img.shields.io/github/actions/workflow/status/phpcfdi/sat-estado-cfdi-http-psr/build.yml?branch=main&logo=github-actions
 [badge-reliability]: https://sonarcloud.io/api/project_badges/measure?project=phpcfdi_sat-estado-cfdi-http-psr&metric=reliability_rating
 [badge-maintainability]: https://sonarcloud.io/api/project_badges/measure?project=phpcfdi_sat-estado-cfdi-http-psr&metric=sqale_rating
 [badge-coverage]: https://img.shields.io/sonar/coverage/phpcfdi_sat-estado-cfdi-http-psr/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io

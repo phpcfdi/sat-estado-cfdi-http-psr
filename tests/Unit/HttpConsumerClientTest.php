@@ -12,7 +12,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Http\Client\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Sunrise\Http\Factory\ResponseFactory;
+use Sunrise\Http\Message\ResponseFactory;
 
 final class HttpConsumerClientTest extends TestCase
 {
