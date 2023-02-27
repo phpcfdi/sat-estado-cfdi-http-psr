@@ -12,15 +12,15 @@ declare(strict_types=1);
 
 use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerClient;
 use PhpCfdi\SatEstadoCfdi\HttpPsr\HttpConsumerFactory;
+use Sunrise\Http\Client\Curl\Client as HttpClient;
 use Sunrise\Http\Message\RequestFactory;
 use Sunrise\Http\Message\ResponseFactory;
 use Sunrise\Http\Message\StreamFactory;
-use Sunrise\Http\Client\Curl\Client;
 
 $streamFactory = new StreamFactory();
 $requestFactory = new RequestFactory();
 $responseFactory = new ResponseFactory();
-$client = new Client($responseFactory, $streamFactory);
+$client = new HttpClient($responseFactory);
 
 // use the current HttpConsumerFactory with specific objects
 

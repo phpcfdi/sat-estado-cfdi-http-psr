@@ -15,12 +15,12 @@ Documentar cómo se puede integrar esta librería con una aplicación de framewo
   - [X] Guzzle (gracias @blacktrue)
   - [ ] HTTPPlug
 
+## Hechas
+
 ### Dependencia de `sunrise/http-client-curl`
 
-Sustituir `symfony/http-client` por `sunrise/http-client-curl` cuando sea compatible con PHP 8.0. 
+Sustituir `symfony/http-client` por `sunrise/http-client-curl` cuando sea compatible con PHP 8.0.
 Así estaba implementado, pero al menos en 2021-01-09 aún no era compatible.
-
-## Hechas
 
 ### Primera versión estable
 
