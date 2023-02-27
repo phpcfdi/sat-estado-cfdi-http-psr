@@ -33,8 +33,7 @@
         "ext-curl": "*",
         "phpcfdi/cfdi-expresiones": "^3.0",
         "symfony/http-client": "^5.2",
-        "sunrise/http-factory": "^1.0",
-        "sunrise/http-message": "^1.0",
+        "sunrise/http-message": "^3.0",
         "phpunit/phpunit": "^9.5"
     },
     "suggest": {
