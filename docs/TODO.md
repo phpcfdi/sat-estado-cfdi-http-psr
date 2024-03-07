@@ -1,20 +1,5 @@
 # phpcfdi/sat-estado-cfdi-soap Lista de tareas pendientes
 
-## Pendientes
-
-### Versión mínima de PHP
-
-Incrementar la versión mínima de PHP a 7.4.
-
-### Documentación de integraciones
-
-Documentar cómo se puede integrar esta librería con una aplicación de framework o librería común.
-  - [ ] Laravel
-  - [ ] Symfony
-  - [ ] Yii
-  - [X] Guzzle (gracias @blacktrue)
-  - [ ] HTTPPlug
-
 ## Hechas
 
 ### Dependencia de `sunrise/http-client-curl`
